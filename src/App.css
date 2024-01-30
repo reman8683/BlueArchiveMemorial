@@ -2,19 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +12,111 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  scale: 105%;
+  z-index: -1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shittim {
+  background-color: rgb(255, 255, 255);
+  width: calc(1280px + 175px);
+  height: calc(720px + 125px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50px;
+  box-shadow: 0 0 720px #0A0A0A;
+}
+
+.shittim-speaker {
+  position: absolute;
+  left: calc(50% - 720px + 30px);
+
+  background-color: rgb(52, 173, 229);
+  height: 120px;
+  width: 10px;
+  border-radius: 10px;
+}
+
+.shittim-button {
+  position: absolute;
+  left: calc(50% + 720px - 65px);
+
+  background-color: rgb(255, 255, 255);
+  height: 55px;
+  width: 55px;
+  border-radius: 100px;
+  box-shadow: 0 0 0 5px #34ade5 inset;
+}
+
+.shittim-screen {
+  height: 720px;
+}
+
+.shittim > div > canvas {
+  border-radius: 10px;
+}
+
+.logo {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  width: 15%;
+  z-index: 100;
+}
+
+.cover {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100vh;
+
+  transition: .5s bottom cubic-bezier(0, 0.6, 0.4, 1);
+  display: table;
+
+  z-index: 100;
+}
+
+.cover-on {
+  bottom: 0;
+}
+
+.cover-off {
+  bottom: 100%;
+}
+
+.cover > div {
+  display:table-cell;
+  vertical-align:middle;
+}
+.cover > div > span {
+  font-family: RoGSanSrfStd, serif;
+  font-size: calc(10vw / 3);
+  line-height: calc(10vw / 3);
+}
+
+.blue {
+  color: #38bdf8;
+}
+
+.white {
+  color: #ffffff;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "RoGSanSrfStd";
+  src: url("./font/RoGSanSrfStd-Bd_latin.woff2") format("woff");
 }

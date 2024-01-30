@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Memorial from "./component/memorial";
+import Shittim from "./component/shittim";
+import Size from "./component/size";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const images = require.context('../public/assets/background/PV4', true);
+    const imageList = images.keys().map(image => images(image));
+
+    return (
+        <div className="App">
+            <Size/>
+            <div className="background" style={{
+                backgroundImage: `url(${imageList[Math.floor(Math.random() * imageList.length)]})`,
+            }}/>
+            <img className="logo" src="/bluearchive.svg" alt="/bluearchive.svg"/>
+            <header className="App-header">
+                <Shittim>
+                    <Memorial/>
+                </Shittim>
+            </header>
+        </div>
+    );
 }
 
 export default App;
